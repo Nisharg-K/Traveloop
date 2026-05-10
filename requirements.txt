@@ -1,0 +1,48 @@
+Traveloop Prototype Requirements
+================================
+
+Project Type
+- Node.js backend
+- Vanilla HTML/CSS/JavaScript frontend
+- No database
+- No Python dependencies
+
+Runtime Requirements
+- Node.js 18 or newer recommended
+- npm 9 or newer recommended
+
+Project Structure
+- server.js: Node.js HTTP server and in-memory API
+- frontend/: static multi-page frontend
+- Test/: previous React prototype backup
+
+Backend Requirements
+- Built-in Node.js modules only
+- In-memory seed data for:
+  - user
+  - trips
+  - cities
+  - activities
+  - packing lists
+- REST-style API endpoints for:
+  - login
+  - trips CRUD
+  - stop management
+  - activity assignment
+  - packing checklist updates
+  - trip copy
+
+Frontend Requirements
+- Separate page-wise HTML files
+- Shared CSS theme
+- Shared JavaScript utilities
+- Neo-brutalist design direction
+- Background patterns and subtle animations
+- Mobile-friendly responsive layout
+
+Run Commands
+- npm start
+- npm run dev
+
+Default Local URL
+- http://localhost:3000

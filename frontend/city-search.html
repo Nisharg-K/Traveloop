@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveloop · City Search</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <div data-topbar></div>
+      <section class="panel">
+        <div class="panel-header">
+          <div><h3>City Search</h3><p class="muted">Search, scan, and add cities to the trip.</p></div>
+          <div id="city-links"></div>
+        </div>
+        <label>Search cities <input id="city-query" placeholder="Lisbon, Kyoto, Seoul..."></label>
+      </section>
+      <div class="grid-3" id="city-results" style="margin-top:1rem;"></div>
+    </main>
+    <script type="module" src="/assets/js/pages/city-search.js"></script>
+  </body>
+  </html>

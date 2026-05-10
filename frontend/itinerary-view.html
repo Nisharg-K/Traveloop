@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveloop · Itinerary View</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <div data-topbar></div>
+      <section class="panel">
+        <img id="hero-cover" class="hero-cover" alt="Trip cover">
+        <div class="panel-header" style="margin-top:1rem;">
+          <div>
+            <h3 id="trip-name"></h3>
+            <p id="trip-description"></p>
+            <p id="trip-meta" class="muted"></p>
+          </div>
+          <div class="inline-actions" id="view-links"></div>
+        </div>
+      </section>
+      <section class="panel" style="margin-top:1rem;">
+        <div class="panel-header">
+          <div><h3>Day-by-Day Plan</h3><p class="muted">Readable city headers with activity blocks.</p></div>
+        </div>
+        <div id="itinerary-days"></div>
+      </section>
+    </main>
+    <script type="module" src="/assets/js/pages/itinerary-view.js"></script>
+  </body>
+  </html>

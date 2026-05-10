@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveloop · Dashboard</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <div data-topbar></div>
+      <section class="hero">
+        <span class="eyebrow">Dashboard</span>
+        <h2>Welcome back, <span id="welcome-name"></span>.</h2>
+        <p>Your active loops, recommended destinations, and budget snapshots all live here.</p>
+        <div class="hero-stats" id="hero-stats"></div>
+        <div class="inline-actions" style="margin-top:1rem;">
+          <a class="button button-primary" href="/create-trip.html">Plan new trip</a>
+          <a class="button button-accent" href="/trips.html">Open my trips</a>
+        </div>
+      </section>
+      <section class="grid-dashboard" style="margin-top:1rem;">
+        <section class="panel">
+          <div class="panel-header"><div><h3>Recent Trips</h3><p class="muted">Continue where you left off.</p></div></div>
+          <div class="grid-3" id="recent-trips"></div>
+        </section>
+        <section class="panel">
+          <div class="panel-header"><div><h3>Budget Highlights</h3><p class="muted">Quick glance at trip targets.</p></div></div>
+          <div id="budget-highlight"></div>
+        </section>
+      </section>
+      <section class="panel" style="margin-top:1rem;">
+        <div class="panel-header"><div><h3>Recommended Destinations</h3><p class="muted">A few seeded ideas to explore next.</p></div></div>
+        <div class="grid-2" id="recommended"></div>
+      </section>
+    </main>
+    <script type="module" src="/assets/js/pages/dashboard.js"></script>
+  </body>
+  </html>

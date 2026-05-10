@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveloop · Activity Search</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <div data-topbar></div>
+      <section class="panel">
+        <div class="panel-header">
+          <div><h3>Activity Search</h3><p class="muted">Filter by type, cost, and duration.</p></div>
+          <div id="activity-links"></div>
+        </div>
+        <div class="field-grid-3">
+          <label>Type
+            <select id="filter-type">
+              <option>All</option>
+              <option>Sightseeing</option>
+              <option>Food</option>
+              <option>Culture</option>
+              <option>Relax</option>
+              <option>Outdoor</option>
+            </select>
+          </label>
+          <label>Max Cost <input id="filter-cost" type="range" min="0" max="100" value="100"></label>
+          <label>Max Duration <input id="filter-duration" type="range" min="1" max="8" value="8"></label>
+        </div>
+      </section>
+      <div class="grid-2" id="activity-results" style="margin-top:1rem;"></div>
+    </main>
+    <script type="module" src="/assets/js/pages/activity-search.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveloop · Shared Itinerary</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <div data-topbar></div>
+      <section class="panel">
+        <img id="shared-cover" class="hero-cover" alt="Shared trip cover">
+        <div class="panel-header" style="margin-top:1rem;">
+          <div>
+            <h3 id="shared-title"></h3>
+            <p id="shared-description"></p>
+          </div>
+          <button class="button-primary" id="copy-trip">Copy Trip</button>
+        </div>
+        <div id="shared-stops"></div>
+      </section>
+    </main>
+    <script type="module" src="/assets/js/pages/shared.js"></script>
+  </body>
+  </html>

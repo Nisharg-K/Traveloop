@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveloop · Budget</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <div data-topbar></div>
+      <div class="grid-2">
+        <section class="panel">
+          <div class="panel-header">
+            <div><h3>Budget Snapshot</h3><p class="muted">See whether the plan is still holding together.</p></div>
+            <div id="budget-links"></div>
+          </div>
+          <div class="hero-stats" id="budget-stats"></div>
+          <div id="budget-notice" style="margin-top:1rem;"></div>
+        </section>
+        <section class="panel">
+          <div class="panel-header">
+            <div><h3>Cost Breakdown</h3><p class="muted">A bold visual split by category.</p></div>
+          </div>
+          <div id="budget-chart" class="chart">
+            <div class="chart-hole">
+              <div>
+                <div class="chart-label">Total spend</div>
+                <div id="chart-total"></div>
+              </div>
+            </div>
+          </div>
+          <div class="legend" id="budget-legend"></div>
+        </section>
+      </div>
+    </main>
+    <script type="module" src="/assets/js/pages/budget.js"></script>
+  </body>
+  </html>

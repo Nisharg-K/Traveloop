@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveloop · Packing</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <div data-topbar></div>
+      <section class="panel">
+        <div class="panel-header">
+          <div><h3>Packing Checklist</h3><p class="muted">Add, remove, mark, and reset items quickly.</p></div>
+          <div id="packing-links"></div>
+        </div>
+        <form id="packing-form">
+          <div class="field-grid-3">
+            <label>Item <input name="label" placeholder="Portable speaker" required></label>
+            <label>Category
+              <select name="category">
+                <option>Essentials</option>
+                <option>Clothing</option>
+                <option>Tech</option>
+                <option>Toiletries</option>
+                <option>Accessories</option>
+              </select>
+            </label>
+            <div style="display:flex;align-items:end;">
+              <button class="button-primary" type="submit">Add item</button>
+            </div>
+          </div>
+        </form>
+      </section>
+      <div id="packing-list" style="margin-top:1rem;"></div>
+    </main>
+    <script type="module" src="/assets/js/pages/packing.js"></script>
+  </body>
+  </html>

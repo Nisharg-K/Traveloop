@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveloop · Create Trip</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <div data-topbar></div>
+      <div class="grid-2">
+        <section class="panel">
+          <div class="panel-header"><div><h3>Create a New Trip</h3><p class="muted">Keep the first step lightweight and direct.</p></div></div>
+          <form id="create-trip-form">
+            <label>Trip Name <input name="name" placeholder="Summer design escape" required></label>
+            <div class="field-grid-2">
+              <label>Start Date <input type="date" name="startDate" required></label>
+              <label>End Date <input type="date" name="endDate" required></label>
+            </div>
+            <label>Budget <input type="number" name="budget" value="1800"></label>
+            <label>Description <textarea name="description" placeholder="Describe the mood, pace, and main idea."></textarea></label>
+            <label>Cover Image URL <input name="coverImage" placeholder="https://..."></label>
+            <button class="button-primary" type="submit">Create trip</button>
+          </form>
+        </section>
+        <section class="panel">
+          <div class="panel-header"><div><h3>Live Preview</h3><p class="muted">A quick visual read before you save.</p></div></div>
+          <img id="preview-image" class="cover-preview" alt="Trip cover preview">
+          <h3 id="preview-title">Untitled Journey</h3>
+          <p id="preview-dates" class="muted">Choose dates to frame the trip</p>
+          <p id="preview-description">Your description, mood, and route notes will appear here.</p>
+        </section>
+      </div>
+    </main>
+    <script type="module" src="/assets/js/pages/create-trip.js"></script>
+  </body>
+  </html>
