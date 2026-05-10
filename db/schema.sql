@@ -1,0 +1,40 @@
+CREATE TABLE IF NOT EXISTS app_user (
+  id INTEGER PRIMARY KEY CHECK (id = 1),
+  name TEXT NOT NULL,
+  email TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS cities (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  country TEXT NOT NULL,
+  cost_index INTEGER NOT NULL,
+  popularity TEXT NOT NULL,
+  vibe TEXT NOT NULL,
+  image TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS activities (
+  id TEXT PRIMARY KEY,
+  city_id TEXT NOT NULL REFERENCES cities(id) ON DELETE CASCADE,
+  name TEXT NOT NULL,
+  type TEXT NOT NULL,
+  cost INTEGER NOT NULL,
+  duration INTEGER NOT NULL,
+  time TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS trips (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  start_date TEXT NOT NULL,
+  end_date TEXT NOT NULL,
+  description TEXT NOT NULL,
+  cover_image TEXT NOT NULL,
+  budget INTEGER NOT NULL,
+  shared BOOLEAN NOT NULL DEFAULT FALSE,
+  costs JSONB NOT NULL DEFAULT '{}'::jsonb,
+  stops JSONB NOT NULL DEFAULT '[]'::jsonb,
+  packing JSONB NOT NULL DEFAULT '[]'::jsonb,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);

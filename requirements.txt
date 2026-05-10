@@ -4,26 +4,33 @@ Traveloop Prototype Requirements
 Project Type
 - Node.js backend
 - Vanilla HTML/CSS/JavaScript frontend
-- No database
+- PostgreSQL database support
 - No Python dependencies
 
 Runtime Requirements
 - Node.js 18 or newer recommended
 - npm 9 or newer recommended
+- PostgreSQL 14 or newer recommended
 
 Project Structure
 - server.js: Node.js HTTP server and in-memory API
+- db/: PostgreSQL schema, seed data, and store adapters
 - frontend/: static multi-page frontend
 - Test/: previous React prototype backup
 
 Backend Requirements
-- Built-in Node.js modules only
+- Built-in Node.js modules plus `pg`
 - In-memory seed data for:
   - user
   - trips
   - cities
   - activities
   - packing lists
+- PostgreSQL tables for:
+  - app_user
+  - cities
+  - activities
+  - trips
 - REST-style API endpoints for:
   - login
   - trips CRUD
@@ -41,6 +48,7 @@ Frontend Requirements
 - Mobile-friendly responsive layout
 
 Run Commands
+- npm install
 - npm start
 - npm run dev
 

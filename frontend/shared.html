@@ -5,20 +5,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Traveloop · Shared Itinerary</title>
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   </head>
   <body>
     <main class="page">
       <div data-topbar></div>
       <section class="panel">
-        <img id="shared-cover" class="hero-cover" alt="Shared trip cover">
-        <div class="panel-header" style="margin-top:1rem;">
+        <div class="panel-header">
           <div>
             <h3 id="shared-title"></h3>
             <p id="shared-description"></p>
           </div>
-          <button class="button-primary" id="copy-trip">Copy Trip</button>
+          <div class="inline-actions">
+            <button class="button-muted" id="copy-link">Copy public link</button>
+            <button class="button-accent" id="download-image">Download image</button>
+            <button class="button-warn" id="download-pdf">Download PDF</button>
+            <button class="button-primary" id="copy-trip">Copy Trip</button>
+          </div>
         </div>
-        <div id="shared-stops"></div>
+        <div class="grid-2 shared-layout">
+          <div class="boarding-pass-wrap">
+            <article class="boarding-pass" id="boarding-pass">
+              <div class="boarding-top">
+                <div class="boarding-qr top" id="boarding-qr"></div>
+                <div class="boarding-brand">
+                  <span>AIR</span>
+                  <strong>TRAVELOOP</strong>
+                </div>
+                <div class="boarding-world" data-export-hide>SHARE</div>
+              </div>
+              <div class="boarding-label">BOARDING PASS</div>
+              <div class="boarding-hero">
+                <div>
+                  <div class="boarding-kicker">TRIP TITLE</div>
+                  <div class="boarding-title" id="bp-title"></div>
+                  <p class="boarding-subtitle" id="bp-subtitle"></p>
+                </div>
+                <div class="boarding-stamp">PUBLIC</div>
+              </div>
+              <div class="boarding-grid">
+                <div>
+                  <div class="boarding-kicker">PASSENGER</div>
+                  <div class="boarding-value" id="bp-passenger"></div>
+                </div>
+                <div>
+                  <div class="boarding-kicker">JOURNEY</div>
+                  <div class="boarding-value route" id="bp-route"></div>
+                </div>
+              </div>
+              <div class="boarding-grid three">
+                <div>
+                  <div class="boarding-kicker">DEPARTURE</div>
+                  <div class="boarding-value" id="bp-start"></div>
+                </div>
+                <div>
+                  <div class="boarding-kicker">RETURN</div>
+                  <div class="boarding-value" id="bp-end"></div>
+                </div>
+                <div>
+                  <div class="boarding-kicker">TRIP CODE</div>
+                  <div class="boarding-value" id="bp-code"></div>
+                </div>
+              </div>
+              <div class="boarding-grid three">
+                <div>
+                  <div class="boarding-kicker">STOPS</div>
+                  <div class="boarding-value" id="bp-stops"></div>
+                </div>
+                <div>
+                  <div class="boarding-kicker">DAYS</div>
+                  <div class="boarding-value" id="bp-days"></div>
+                </div>
+                <div>
+                  <div class="boarding-kicker">BUDGET</div>
+                  <div class="boarding-value" id="bp-budget"></div>
+                </div>
+              </div>
+              <div class="boarding-route-chips" id="bp-route-chips"></div>
+              <div class="boarding-art">
+                <img src="/images/boarding_pass.png" alt="Travel landmarks illustration">
+              </div>
+            </article>
+          </div>
+          <div class="shared-side">
+            <img id="shared-cover" class="hero-cover shared-cover-tall" alt="Shared trip cover">
+            <div class="panel shared-link-panel">
+              <div class="boarding-kicker">PUBLIC LINK</div>
+              <p id="public-link" class="muted shared-link-text"></p>
+            </div>
+            <div class="panel">
+              <div class="panel-header">
+                <div>
+                  <h3>Stops</h3>
+                  <p class="muted">Share the route and let friends scan back into it.</p>
+                </div>
+              </div>
+              <div id="shared-stops"></div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <script type="module" src="/assets/js/pages/shared.js"></script>

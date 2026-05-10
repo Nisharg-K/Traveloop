@@ -55,31 +55,70 @@ export const api = {
 export function mountTopbar(active, user = { name: "Traveler", email: "traveler@traveloop.test" }) {
   const node = document.querySelector("[data-topbar]");
   if (!node) return;
+
   const items = [
-    ["dashboard", "Dashboard", routes.dashboard],
-    ["create-trip", "Create Trip", routes.createTrip],
-    ["trips", "My Trips", routes.trips]
+    ["dashboard", "Dashboard", routes.dashboard, "overview"],
+    ["create-trip", "Create Trip", routes.createTrip, "new"],
+    ["trips", "My Trips", routes.trips, "library"]
   ];
-  node.innerHTML = `
-    <div class="topbar">
-      <div class="brand">
+
+  const page = node.closest(".page");
+  if (!page) return;
+
+  const contentNodes = [...page.children].filter((child) => child !== node);
+  const activeLabel = items.find(([key]) => key === active)?.[1] || "Traveloop";
+
+  const shell = document.createElement("div");
+  shell.className = "app-shell";
+  shell.innerHTML = `
+    <aside class="sidebar">
+      <div class="sidebar-brand">
         <div class="logo">TL</div>
         <div class="brand-copy">
           <h1>Traveloop</h1>
-          <p>Neo-brutalist travel planner prototype</p>
+          <p>Multi-city planner</p>
         </div>
       </div>
-      <nav class="nav">
+      <nav class="sidebar-nav">
         ${items
           .map(
-            ([key, label, href]) =>
-              `<a class="${active === key ? "active" : ""}" href="${href}">${label}</a>`
+            ([key, label, href, tag]) => `
+              <a class="${active === key ? "active" : ""}" href="${href}">
+                <span>${label}</span>
+                <small>${tag}</small>
+              </a>
+            `
           )
           .join("")}
       </nav>
-      <div class="user-pill">${user.name} · ${user.email}</div>
-    </div>
+      <div class="sidebar-card">
+        <div class="sticker">Live Prototype</div>
+        <h3>Plan in loops</h3>
+        <p class="muted">Cities, itinerary, budget, and packing all stay in one full-screen workspace.</p>
+      </div>
+    </aside>
+    <section class="workspace">
+      <div class="topbar">
+        <div class="topbar-copy">
+          <p class="eyebrow">Travel workspace</p>
+          <div>
+            <h2>${activeLabel}</h2>
+            <p class="muted">Static navigation with page content scrolling inside the dashboard.</p>
+          </div>
+        </div>
+        <div class="user-pill">${user.name} · ${user.email}</div>
+      </div>
+      <div class="content-scroll">
+        <div class="content-stack"></div>
+      </div>
+    </section>
   `;
+
+  page.innerHTML = "";
+  page.appendChild(shell);
+
+  const stack = page.querySelector(".content-stack");
+  contentNodes.forEach((child) => stack.appendChild(child));
 }
 
 export function getTripId() {
